@@ -9,7 +9,7 @@ const app = express();
 
 // ✅ Use CORS — allow your frontend origin
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://url-shortner-2pf2.onrender.com'], // Update for production
+  origin: ['https://enchanting-cassata-0015b0.netlify.app/', 'https://url-shortner-2pf2.onrender.com'], // Update for production
   methods: ['GET', 'POST'],
 }));
 
