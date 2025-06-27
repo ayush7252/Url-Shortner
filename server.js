@@ -21,7 +21,7 @@ app.post('/api/shorten', async (req, res) => {
   const newUrl = new Url({ originalUrl, shortId });
   await newUrl.save();
 
-  res.json({ shortUrl: `${process.env.BASE_URL}/${shortId}` });
+  res.json({ shortUrl: `https://url-shortner-2pf2.onrender.com/${shortId}` });
 });
 
 // Redirect
