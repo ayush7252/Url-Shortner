@@ -2,16 +2,12 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const nanoid = require('nanoid').nanoid;
-const cors = require('cors'); // ✅ Add CORS
+const cors = require('cors');
 const Url = require('./models/Url');
 
 const app = express();
 
-// ✅ Use CORS — allow your frontend origin
-app.use(cors({
-  origin: ['https://enchanting-cassata-0015b0.netlify.app/', 'https://url-shortner-2pf2.onrender.com'], // Update for production
-  methods: ['GET', 'POST'],
-}));
+app.use(cors());
 
 app.use(express.json());
 
@@ -43,7 +39,7 @@ app.get('/:shortId', async (req, res) => {
   }
 });
 
-// ✅ Add a root route for Render health check
+// ✅ Health check
 app.get('/', (req, res) => {
   res.send('URL Shortener API is running ✅');
 });
